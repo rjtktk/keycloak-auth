@@ -1,0 +1,30 @@
+{
+  "realm": "master",
+  "auth-server-url": "http://localhost:8087",
+  "resource": "rest-client",
+  "credentials": {
+    "secret": "S9avZYFo3turoTsZ9HFQBwjCROJHFNH4"
+  },
+  "policy-enforcer": {
+    "enforcement-mode": "ENFORCING",
+    "paths": [
+      {
+        "path": "/protected-via-enforcer/*",
+        "methods": [
+          {
+            "method": "GET",
+            "scopes": [
+              "tm-sam:functional:alert-listing:view"
+            ]
+          },
+          {
+            "method": "POST",
+            "scopes": [
+              "tm-sam:functional:alert-listing:edit"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
